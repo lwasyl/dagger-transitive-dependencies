@@ -1,0 +1,10 @@
+plugins {
+    id("com.starter.library.kotlin") version("0.42.0")
+    id("kotlin-kapt")
+}
+
+dependencies {
+    implementation(libs.dagger.core)
+    kapt(libs.dagger.compiler)
+    implementation(project(":networking"))
+}

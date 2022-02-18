@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    versionCatalogs {
+        libs {
+//            version("dagger", "2.40.5")
+            version("dagger", "2.41")
+
+            library("dagger-core", "com.google.dagger", "dagger").versionRef("dagger")
+            library("dagger-compiler", "com.google.dagger", "dagger-compiler").versionRef("dagger")
+        }
+    }
+}
+rootProject.name = "My Application"
+include ':app', ":presentation", ":networking", ":core"
